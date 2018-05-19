@@ -3,14 +3,13 @@ var MongoClient = require('mongodb').MongoClient;
 
 var uri = "mongodb+srv://mongodb-stitch-sample-ipjjx:7gShZY30dHAhodZ0@cluster0-cdzyn.mongodb.net/admin";
 
+const port = process.env.PORT || 3002;
 var app = express();
 var randomstring = require("randomstring");
 
 app.set('view engine', 'hbs');
 
-
 app.get('/about', (req, res) => {
-    
     
     MongoClient.connect(uri, function(err, db){
         const a = randomstring.generate(7);
@@ -39,6 +38,6 @@ app.get('/about', (req, res) => {
 });
 
 
-app.listen(3000, () => {
-    console.log('server is up and running...port 3000');
+app.listen(port, () => {
+    console.log(`server is up and running...port ${port}`);
 });
