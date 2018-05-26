@@ -17,7 +17,7 @@ app.get('/about', (req, res) => {
             length: 12,
             charset: 'alphabetic'
           });
-        
+
         var _obj = { company_name: a, address: b };
         if (err) throw err;
         var dbo = db.db("sample");
@@ -33,10 +33,7 @@ app.get('/about', (req, res) => {
             age: 24
         })
     });
-
-   
 });
-
 
 app.listen(port, () => {
     console.log(`server is up and running...port ${port}`);
